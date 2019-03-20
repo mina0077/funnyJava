@@ -21,8 +21,8 @@ public class ClientRecords {
         filePath = scanner.nextLine();
         scanner.close();
         getFilesLineElements(filePath);
-        System.out.println("     name  " + "          weghit   " + "         height");
-        System.out.println("  ==========  " + "       ===========   " + "      =========");
+        System.out.println("     name  " + "          weghit   " + "        height");
+        System.out.println("  ==========  " + "    ===========   " + "      =========");
         showData();
         showStatistcs();
     }
@@ -39,7 +39,7 @@ public class ClientRecords {
                     for (int i = 0; i < tempLine.length(); i++) {
                         if (tempLine.charAt(i) != '.' && !Character.isDigit(tempLine.charAt(i))) {
                             name += tempLine.charAt(i);
-                        } else if (tempLine.charAt(i) == '.' || tempLine.charAt(i) == ' ') {
+                        } else if (tempLine.charAt(i) == '.' ) {
                             dots++;
                             i++;
                         } else if (Character.isDigit(tempLine.charAt(i)) && dots < 2) {
@@ -63,7 +63,7 @@ public class ClientRecords {
 
     public static void showData() {
         for (int i = 0; i < nameList.size(); i++) {
-            System.out.println(nameList.get(i) + "            " + whightList.get(i) + "            " + heightList.get(i));
+            System.out.println(nameList.get(i) + "            " + whightList.get(i) + "              " + heightList.get(i));
         }
     }
 
@@ -73,8 +73,8 @@ public class ClientRecords {
         System.out.println();
         System.out.println();
         System.out.print("Statistics:  ");
-        System.out.println("Largest Weight: " + Collections.max(whightList));
-        System.out.println("Largest Height: " + Collections.max(heightList));
+        System.out.println("Largest Weight:" + Collections.max(whightList));
+        System.out.println("Largest Height:" + Collections.max(heightList));
         } catch (Exception e) {
             e.getStackTrace();
         }
