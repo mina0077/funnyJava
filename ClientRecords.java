@@ -24,7 +24,7 @@ public class ClientRecords {
         System.out.println("     name  " + "          weghit   " + "        height");
         System.out.println("  ==========  " + "    ===========   " + "      =========");
         showData();
-        showStatistcs();
+        showStatistics();
     }
     public static String getFilesLineElements(String filePath) {
         try {
@@ -56,7 +56,8 @@ public class ClientRecords {
                 }
             }
         } catch (IOException e) {
-            e.getStackTrace();
+            System.err.println("Error enter a valid path");
+            System.exit(1);
         }
         return null;
     }
@@ -67,7 +68,7 @@ public class ClientRecords {
         }
     }
 
-    public static void showStatistcs() {
+    public static void showStatistics() {
         try {
         System.out.println();
         System.out.println();
@@ -76,7 +77,7 @@ public class ClientRecords {
         System.out.println("Largest Weight:" + Collections.max(whightList));
         System.out.println("Largest Height:" + Collections.max(heightList));
         } catch (Exception e) {
-            e.getStackTrace();
+            System.out.println("Error while showing statistics");
         }
     }
 
